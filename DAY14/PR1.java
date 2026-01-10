@@ -18,6 +18,11 @@ class student{
         student stu = (student) obj;
         return this.id == stu.id && this.name == stu.name;
     }
+
+    @Override
+    public int hashCode() {
+        return id+name.hashCode();
+    }
 }
 public class PR1 {
     static void main(String[] args) {
@@ -25,5 +30,8 @@ public class PR1 {
         System.out.println(stu);
         student stu1 = new student(101,"huka");
         System.out.println(stu.equals(stu1));
+        System.out.println(stu.hashCode());
+        System.out.println(stu1.hashCode());
+        System.out.println(stu.hashCode() == stu1.hashCode());
     }
 }
